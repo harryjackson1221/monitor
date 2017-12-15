@@ -17,7 +17,7 @@ curl $URL -L --compressed -s > new.html
 DIFFSTDOUT="$(diff new.html old.html)"
 
 if [ "0" != "${#DIFFSTDOUT}" ]; then
-  sendEmail -f $UNAME -s smtp.gmail.com:465 \
+  sendEmail -f $UNAME -s smtp.gmail.com:587 \
     -xu $USERNAME -xp $PW -t $UNAME \
     -o tls=yes -u "The Website you are monitoring has changed"
     -m "Visit it at $URL"
