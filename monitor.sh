@@ -19,7 +19,7 @@ DIFFSTDOUT="$(diff new.html old.html)"
 if [ "0" != "${#DIFFSTDOUT}" ]; then
   sendEmail -f $UNAME -s smtp.gmail.com:587 \
     -xu $USERNAME -xp $PW -t $UNAME \
-    -o tls=yes -u "The Website you are monitoring has changed"
+    -o tls=yes -u "The Website you are monitoring has changed" \
     -m "Visit it at $URL"
     fi
 done
